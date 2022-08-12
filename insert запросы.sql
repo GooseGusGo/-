@@ -1,0 +1,84 @@
+INSERT INTO genre(id, name)	VALUES(1, 'pop');
+INSERT INTO genre(id, name)	VALUES(2, 'rock');
+INSERT INTO genre(id, name)	VALUES(3, 'regae');
+INSERT INTO genre(id, name)	VALUES(4, 'blues');
+INSERT INTO genre(id, name)	VALUES(5, 'jazz');
+
+INSERT INTO artist(id, name) VALUES(1, 'Tom Waits');
+INSERT INTO artist(id, name) VALUES(2, 'Bob Marley');
+INSERT INTO artist(id, name) VALUES(3, 'Motorhead');
+INSERT INTO artist(id, name) VALUES(4, 'Louis Armstrong');
+INSERT INTO artist(id, name) VALUES(5, 'LISA');
+INSERT INTO artist(id, name) VALUES(6, 'AC/DC');
+INSERT INTO artist(id, name) VALUES(7, 'Led Zeppelin');
+INSERT INTO artist(id, name) VALUES(8, 'Pantera');
+
+INSERT INTO album(id, name, yearalbum) VALUES(1, 'Bone Machine', 1992);
+INSERT INTO album(id, name, yearalbum) VALUES(2, 'Natty Dread', 1974);
+INSERT INTO album(id, name, yearalbum) VALUES(3, 'We Are Motörhead', 2000);
+INSERT INTO album(id, name, yearalbum) VALUES(4, 'Cest si bon', 1991);
+INSERT INTO album(id, name, yearalbum) VALUES(5, 'homura', 2020);
+INSERT INTO album(id, name, yearalbum) VALUES(6, 'Highway to Hell', 1979);
+INSERT INTO album(id, name, yearalbum) VALUES(7, 'Led Zeppelin', 1969);
+INSERT INTO album(id, name, yearalbum) VALUES(8, 'Vulgar Display of Power', 1992);
+
+INSERT INTO track(id, name, duration, album_id) VALUES(1, 'I Dont Wanna Grow Up', 151, 1);
+INSERT INTO track(id, name, duration, album_id) VALUES(2, 'Dirt In The Ground', 247, 1);
+INSERT INTO track(id, name, duration, album_id) VALUES(3, 'No Woman No Cry', 226, 2);
+INSERT INTO track(id, name, duration, album_id) VALUES(4, 'Them Belly Full', 193, 2);
+INSERT INTO track(id, name, duration, album_id) VALUES(5, 'One More Fucking Time', 406, 3);
+INSERT INTO track(id, name, duration, album_id) VALUES(6, 'We Are Motörhead', 141, 3);
+INSERT INTO track(id, name, duration, album_id) VALUES(7, 'Hello, Dolly!', 148, 4);
+INSERT INTO track(id, name, duration, album_id) VALUES(8, 'What A Wonderful World', 139, 4);
+INSERT INTO track(id, name, duration, album_id) VALUES(9, 'homura', 275, 5);
+INSERT INTO track(id, name, duration, album_id) VALUES(10, 'lost romance', 237, 5);
+INSERT INTO track(id, name, duration, album_id) VALUES(11, 'Highway to Hell', 208, 6);
+INSERT INTO track(id, name, duration, album_id) VALUES(12, 'Touch Too Much', 266, 6);
+INSERT INTO track(id, name, duration, album_id) VALUES(13, 'Good Times Bad Times', 166, 7);
+INSERT INTO track(id, name, duration, album_id) VALUES(14, 'Babe Im Gonna Leave You', 402, 7);
+INSERT INTO track(id, name, duration, album_id) VALUES(15, 'Mouth For War', 236, 8);
+INSERT INTO track(id, name, duration, album_id) VALUES(16, 'A New Level', 237, 8);
+
+INSERT INTO genreartist(genre_id, artist_id) VALUES(4, 1);
+INSERT INTO genreartist(genre_id, artist_id) VALUES(3, 2);
+INSERT INTO genreartist(genre_id, artist_id) VALUES(2, 3);
+INSERT INTO genreartist(genre_id, artist_id) VALUES(5, 4);
+INSERT INTO genreartist(genre_id, artist_id) VALUES(1, 5);
+INSERT INTO genreartist(genre_id, artist_id) VALUES(2, 6);
+INSERT INTO genreartist(genre_id, artist_id) VALUES(2, 7);
+INSERT INTO genreartist(genre_id, artist_id) VALUES(2, 8);
+
+INSERT INTO albumartist(album_id, artist_id) VALUES(1, 1);
+INSERT INTO albumartist(album_id, artist_id) VALUES(2, 2);
+INSERT INTO albumartist(album_id, artist_id) VALUES(3, 3);
+INSERT INTO albumartist(album_id, artist_id) VALUES(4, 4);
+INSERT INTO albumartist(album_id, artist_id) VALUES(5, 5);
+INSERT INTO albumartist(album_id, artist_id) VALUES(6, 6);
+INSERT INTO albumartist(album_id, artist_id) VALUES(7, 7);
+INSERT INTO albumartist(album_id, artist_id) VALUES(8, 8);
+
+INSERT INTO collection(id, name, yearcollection) VALUES(1, 'Best of Tom Waits', 2022);
+INSERT INTO collection(id, name, yearcollection) VALUES(2, 'Best of Bob Marley', 2022);
+INSERT INTO collection(id, name, yearcollection) VALUES(3, 'Best of Motorhead', 2022);
+INSERT INTO collection(id, name, yearcollection) VALUES(4, 'Best of Louis Armstrong', 2022);
+INSERT INTO collection(id, name, yearcollection) VALUES(5, 'Best of LISA', 2022);
+INSERT INTO collection(id, name, yearcollection) VALUES(6, 'Best of AC/DC', 2022);
+INSERT INTO collection(id, name, yearcollection) VALUES(7, 'Best of Led Zeppelin', 2022);
+INSERT INTO collection(id, name, yearcollection) VALUES(8, 'Best of Pantera', 2022);
+
+INSERT INTO trackcollections(track_id, collection_id) VALUES(1, 1);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(2, 1);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(3, 2);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(4, 2);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(5, 3);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(6, 3);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(7, 4);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(8, 4);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(9, 5);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(10, 5);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(11, 6);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(12, 6);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(13, 7);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(14, 7);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(15, 8);
+INSERT INTO trackcollections(track_id, collection_id) VALUES(16, 8);
