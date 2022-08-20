@@ -11,19 +11,18 @@ JOIN track t ON a.id = t.album_id
 GROUP BY a.name;
 
 SELECT ar.name FROM artist ar
+EXCEPT DISTINCT SELECT ar.name FROM artist ar
 JOIN albumartist aa ON ar.id = aa.artist_id
 JOIN album al ON aa.album_id = al.id
-WHERE al.yearalbum != 2020
-GROUP BY ar.name;
+WHERE al.yearalbum = 2020;
 
-SELECT c.name FROM collection c
+SELECT DISTINCT c.name FROM collection c
 JOIN trackcollections tc ON c.id = tc.collection_id
 JOIN track t ON tc.track_id = t.id
 JOIN album al ON t.album_id = al.id
 JOIN albumartist aa ON al.id = aa.album_id
 JOIN artist ar ON aa.artist_id = ar.id
-WHERE ar.name LIKE '%Motorhead%'
-GROUP BY c.name;
+WHERE ar.name LIKE '%Motorhead%';
 
 SELECT al.name FROM album al
 JOIN albumartist aa ON al.id = aa.album_id
@@ -44,7 +43,13 @@ JOIN album al ON aa.album_id = al.id
 JOIN track t ON al.id = t.album_id
 WHERE t.duration = (SELECT MIN(t.duration) FROM track t);
 
-SELECT al.name, COUNT(t.album_id) FROM album al
-LEFT JOIN track t ON al.id = t.album_id
+SELECT al.name AS count_trek
+FROM album al
+JOIN track t ON al.id = t.album_id
 GROUP BY al.name
-order by COUNT(t.album_id);
+HAVING COUNT(t.name) = (SELECT COUNT(t.name) AS count_t
+FROM album al
+JOIN track t ON al.id = t.album_id
+GROUP BY al.name
+ORDER BY count_t
+LIMIT 1);
